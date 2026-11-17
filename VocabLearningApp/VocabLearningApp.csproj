@@ -1,0 +1,286 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D3E582FD-0850-405F-81CE-E1DC55C78DF5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VocabLearningApp</RootNamespace>
+    <AssemblyName>VocabLearningApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v24.1" />
+    <Reference Include="DevExpress.Data.Desktop.v24.1" />
+    <Reference Include="DevExpress.Data.v24.1" />
+    <Reference Include="DevExpress.Printing.v24.1.Core" />
+    <Reference Include="DevExpress.Utils.v24.1" />
+    <Reference Include="DevExpress.XtraBars.v24.1" />
+    <Reference Include="DevExpress.Sparkline.v24.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v24.1" />
+    <Reference Include="DevExpress.Drawing.v24.1" />
+    <Reference Include="DevExpress.XtraGrid.v24.1, Version=24.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v24.1, Version=24.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v24.1, Version=24.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.9.5.4\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\PracticeBus.cs" />
+    <Compile Include="BUS\DataSourceBus.cs" />
+    <Compile Include="BUS\DictionaryBus.cs" />
+    <Compile Include="BUS\VocabBookDetailBus.cs" />
+    <Compile Include="BUS\VocabBookBus.cs" />
+    <Compile Include="BUS\TermBus.cs" />
+    <Compile Include="BUS\TermTypeBus.cs" />
+    <Compile Include="BUS\LessonBus.cs" />
+    <Compile Include="BUS\ChapterBus.cs" />
+    <Compile Include="BUS\CategoryBus.cs" />
+    <Compile Include="DAL\DTO\CategoryOptionDTO.cs" />
+    <Compile Include="DAL\DTO\ChapterOptionDTO.cs" />
+    <Compile Include="DAL\DTO\FlashCardItemDTO.cs" />
+    <Compile Include="DAL\DTO\QuizQuestionDTO.cs" />
+    <Compile Include="DAL\DTO\LessonOptionDTO.cs" />
+    <Compile Include="DAL\DTO\FlatTermDTO.cs" />
+    <Compile Include="DAL\DTO\TreeNodeDTO.cs" />
+    <Compile Include="DAL\DTO\OptionDTO.cs" />
+    <Compile Include="DAL\EntityModels\Category.cs" />
+    <Compile Include="DAL\EntityModels\Chapter.cs" />
+    <Compile Include="DAL\EntityModels\DatabaseContext.cs" />
+    <Compile Include="DAL\EntityModels\Lesson.cs" />
+    <Compile Include="DAL\EntityModels\Term.cs" />
+    <Compile Include="DAL\EntityModels\TermType.cs" />
+    <Compile Include="DAL\EntityModels\VocabBook.cs" />
+    <Compile Include="DAL\EntityModels\VocabBookDetail.cs" />
+    <Compile Include="GUI\Common\clsCommon.cs" />
+    <Compile Include="GUI\Common\clsGlobalVariables.cs" />
+    <Compile Include="GUI\Forms\FrmQuiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmQuiz.Designer.cs">
+      <DependentUpon>FrmQuiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmFlashCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmFlashCard.Designer.cs">
+      <DependentUpon>FrmFlashCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmFlashCardOrQuiz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmFlashCardOrQuiz.Designer.cs">
+      <DependentUpon>FrmFlashCardOrQuiz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmPractice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmPractice.Designer.cs">
+      <DependentUpon>FrmPractice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmVocabBookDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmVocabBookDetail.Designer.cs">
+      <DependentUpon>FrmVocabBookDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmDictionary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmDictionary.Designer.cs">
+      <DependentUpon>FrmDictionary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmEnrichVocabBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmEnrichVocabBook.Designer.cs">
+      <DependentUpon>FrmEnrichVocabBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmTermDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmTermDetail.Designer.cs">
+      <DependentUpon>FrmTermDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmTerm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmTerm.Designer.cs">
+      <DependentUpon>FrmTerm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmVocabBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmVocabBook.Designer.cs">
+      <DependentUpon>FrmVocabBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmLesson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmLesson.Designer.cs">
+      <DependentUpon>FrmLesson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmChapter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmChapter.Designer.cs">
+      <DependentUpon>FrmChapter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmCategory.Designer.cs">
+      <DependentUpon>FrmCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Validators\TermValidator.cs" />
+    <Compile Include="GUI\Validators\VocabBookValidator.cs" />
+    <Compile Include="GUI\Validators\LessonValidator.cs" />
+    <Compile Include="GUI\Validators\ChapterValidator.cs" />
+    <Compile Include="GUI\Validators\CategoryValidator.cs" />
+    <Compile Include="GUI\Validators\BaseValidator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Forms\FrmQuiz.resx">
+      <DependentUpon>FrmQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmFlashCard.resx">
+      <DependentUpon>FrmFlashCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmFlashCardOrQuiz.resx">
+      <DependentUpon>FrmFlashCardOrQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmPractice.resx">
+      <DependentUpon>FrmPractice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmVocabBookDetail.resx">
+      <DependentUpon>FrmVocabBookDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmDictionary.resx">
+      <DependentUpon>FrmDictionary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmEnrichVocabBook.resx">
+      <DependentUpon>FrmEnrichVocabBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmTermDetail.resx">
+      <DependentUpon>FrmTermDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmTerm.resx">
+      <DependentUpon>FrmTerm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmVocabBook.resx">
+      <DependentUpon>FrmVocabBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmLesson.resx">
+      <DependentUpon>FrmLesson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmChapter.resx">
+      <DependentUpon>FrmChapter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmCategory.resx">
+      <DependentUpon>FrmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
