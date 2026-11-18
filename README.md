@@ -87,4 +87,5 @@ IT資格試験（基本情報技術者試験など）の学習や専門用語の
 フラッシュカードで覚えた用語の定着度を確認できる4択クイズ画面です。  
 画面上部に用語の説明文（質問）が出題され、下部のラジオボタン（A〜D）から該当する用語を選択して解答します。解答の確定（正誤判定）や選択のリセット、前後の問題への移動が下部のコントロールバーから直感的に操作できるよう設計されています。
 
-<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/c1f493df-bfe7-4e3f-a822-95b594ffda1" />
+<img width="1919" height="1016" alt="image" src="https://github.com/user-attachments/assets/3b967ae0-1dcd-48ad-a104-a9ba3065a971" />
+
